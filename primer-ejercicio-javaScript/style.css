@@ -1,0 +1,54 @@
+body{
+    background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+header{
+    text-align: center;
+    padding: 10rem;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px black;
+
+}
+.boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+button{
+    width: 250px;
+    height: 65px;
+    padding: 1rem 1rem;
+    color: white;
+    background: -webkit-linear-gradient(90deg, #81ec28,#00f4b4,#64eef5);
+    background: linear-gradient(90deg, #81ec28,#00f4b4,#64eef5);
+    font-size: 1rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px black;    ;
+}
+
+button:hover{
+    background-image: linear-gradient(to right, #051937, #003d5e, #006369, #008657, #81a139);
+}
+
+@media screen and (max-width: 760px) {
+    header{
+        padding: 100px;
+    }
+
+    button {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    header {
+        padding: 50px;
+    }
+
+    button{
+        width: 80%;
+    }
+}
