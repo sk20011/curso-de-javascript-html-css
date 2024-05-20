@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input id="EntradaDeTexto" type="text">
+        <button onclick="enviar()">enviar</button>
+    </div>
+    <h1 id="texto">Aun no sabes como te llamas</h1>
+
+    <script>
+        function enviar(){
+            let nombre = document.getElementById("EntradaDeTexto").value.trim();
+            let elementoTexto = document.getElementById("texto");
+            let condicional = /^[A-Z a-z\s]+$/;
+
+            if(nombre === "") {
+                elementoTexto.textContent = `Lo sentimos pero no hemos detectado ningun valor`;
+            } else if(condicional.test(nombre)){
+                elementoTexto.textContent = `Hola ${nombre} bienvenido!!!`
+            } else{
+                elementoTexto.textContent = `Lo sentimos pero este valor ${nombre} no es valido!`
+            }
+        }
+    </script>
+</body>
+</html>
+
