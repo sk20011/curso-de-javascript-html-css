@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <!--Ponemos las indicaciones de lo que tendria que hacer el usuario-->
+        <p>Por favor introduzca su Nombre y apellido</p>
+        <div class="entrada-texto">
+            <!--Aqui ponemos entrada de texto para que el usario introduzca el nombre y Apellido-->
+            <input id="ingreso-nombre-usario" type="text">
+            <!--Creamos el boton de saludar-->
+            <button onclick="saludar()">Saludar</button>
+        </div>
+
+        
+
+    <!--Aqui escribimos el codigo de JavaScript creando la etiquerta script y dentro de ella ira todo el codigo-->
+    <script>
+        function saludar(){
+            let nombreApellido = document.getElementById("ingreso-nombre-usario").value
+            let comprobacionValor = /^[A-Z a-z\s]+$/
+
+            if(comprobacionValor.test(nombreApellido)){
+                alert(`Hola ${nombreApellido}!`)
+            } else if(nombreApellido ===""){
+                alert("No has introducido ningun valor")
+            } else{
+                alert(`Lo siento pero este valor ${nombreApellido} no es valido`)
+                
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
