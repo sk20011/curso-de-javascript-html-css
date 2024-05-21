@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="caja">
+        <input id="ingresoDeSegundos" type="number">
+        <button onclick="inicioTiempo()">Cerrar</button>
+    </div>
+    <h1 id="texto">APAGADO</h1>
+
+    <script>
+        let tiempo = document.getElementById("ingresoDeSegundos");
+        let elementoTexto = document.getElementById("texto");
+        function inicioTiempo(){
+            setTimeout(finDelTiempo, 1000 * tiempo.value); 
+        }
+
+        function finDelTiempo(){
+            elementoTexto.textContent = "Encendido";
+            elementoTexto.style.color = "green" ;
+        }
+    </script>
+</body>
+</html>
