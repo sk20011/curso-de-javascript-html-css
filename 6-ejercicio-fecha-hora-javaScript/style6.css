@@ -17,6 +17,7 @@ input{
     outline: none;
     width: 35%;
     background-color: black;
+    color: white;
 }
 
 input:hover{
