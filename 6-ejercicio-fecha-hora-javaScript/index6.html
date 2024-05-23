@@ -1,3 +1,5 @@
+<!--Reloj con mini alarma-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,45 +8,48 @@
     <link rel="stylesheet" href="style6.css">
     <title>Document</title>
 </head>
-<body onload="inicioReloj()">
+<body onload="inicioTiempo()">
     <div class="caja">
-        <input id="ingresoDeSegundos" type="number">
-        <button onclick="alrma()">Alarma</button>
+        <input id="igresaSusSegundos" type="number">
+        <button onclick="cuentaAtras()">Activa</button>
     </div>
     <h1 id="texto">00:00:00</h1>
 
-    <audio id="sondio">
-        <source src="audios/alarma.mp3">
+    <audio id="sonido">
+        <source src="Audios/alarma.mp3">
     </audio>
 
     <script>
-        let tiempo = document.getElementById("ingresoDeSegundos");
-        let recursoAudio = document.getElementById("sondio");
+        let tiempoAlarma = document.getElementById("igresaSusSegundos");
         let elementoTexto = document.getElementById("texto");
-        
-        function alrma(){
-            setTimeout(finDeTiempo, 1000 * tiempo.value);
+        let sonido = document.getElementById("sonido");
+
+        function cuentaAtras(){
+            setTimeout(finDeCuentaAtras, 1000 * tiempoAlarma.value);
         }
 
-        function finDeTiempo(){
-            recursoAudio.play();
+        function finDeCuentaAtras(){
+            sonido.play();
         }
 
-        function inicioReloj(){
-            setInterval(tickTack, 1000);
+        function inicioTiempo(){
+            setInterval(datosDeReloj, 1000);
         }
 
-        function tickTack(){
-            let tiempoActual = new Date();
-            let hora = String(tiempoActual.getHours()).padStart(2, "0");
-            let minutos = String(tiempoActual.getMinutes()).padStart(2, "0");
-            let segundos = String(tiempoActual.getSeconds()).padStart(2, "0");
+        function datosDeReloj(){
+            let tiempo = new Date();
+            let horas = String(tiempo.getHours()).padStart(2, "0");
+            let minutos = String(tiempo.getMinutes()).padStart(2, "0");
+            let segundos = String(tiempo.getSeconds()).padStart(2, "0");
 
-            let reloj = hora + ":" + minutos + ":" + segundos;
+            let reloj = `${horas}:${minutos}:${segundos}`;
             elementoTexto.textContent = reloj;
-
-
         }
     </script>
 </body>
 </html>
+
+
+
+
+
