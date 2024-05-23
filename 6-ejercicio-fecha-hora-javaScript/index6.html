@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style6.css">
     <title>Document</title>
 </head>
-<body>
-    
+<body onload="inicioReloj()">
+    <div class="caja">
+        <input id="ingresoDeSegundos" type="number">
+        <button onclick="alrma()">Alarma</button>
+    </div>
+    <h1 id="texto">00:00:00</h1>
+
+    <audio id="sondio">
+        <source src="audios/alarma.mp3">
+    </audio>
+
+    <script>
+        let tiempo = document.getElementById("ingresoDeSegundos");
+        let recursoAudio = document.getElementById("sondio");
+        let elementoTexto = document.getElementById("texto");
+        function alrma(){
+            setTimeout(finDeTiempo, 1000 * tiempo.value);
+        }
+
+        function finDeTiempo(){
+            recursoAudio.play();
+        }
+
+        function inicioReloj(){
+            setInterval(tickTack, 1000);
+        }
+
+        function tickTack(){
+            let tiempoActual = new Date();
+            let hora = String(tiempoActual.getHours()).padStart(2, "0");
+            let minutos = String(tiempoActual.getMinutes()).padStart(2, "0");
+            let segundos = String(tiempoActual.getSeconds()).padStart(2, "0");
+
+            let reloj = hora + ":" + minutos + ":" + segundos;
+            elementoTexto.textContent = reloj;
+
+
+        }
+    </script>
 </body>
 </html>

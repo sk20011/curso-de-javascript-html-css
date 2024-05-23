@@ -1,0 +1,49 @@
+body{
+    background-image: linear-gradient(to right, #9333ea, #8244ed, #7050ee, #5e59ee, #4b61ed, #725be2, #8b56d7, #9e51cb, #c43cab, #da2c87, #e12f63, #dc4141);
+
+
+}
+
+.caja{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+input{
+    padding: 1rem;
+    border-radius: 2rem;
+    outline: none;
+    width: 35%;
+    background-color: black;
+}
+
+input:hover{
+    box-shadow: 0 0 35px red;
+    color: white;
+}
+
+button{
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 15%;
+    background-color: #6d28d9;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+button:hover{
+    text-shadow: 2px 2px 5px red;
+}
+
+h1{
+    font-family: monospace;
+    font-size: 10rem;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    padding: 10rem;
+    
+}
