@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload()>
+    <h2>Responde de la manera mas rapida a estas preguntas</h2>
+    <p>¿Cuál es tu color favorito?</p>
+    <input type="text" id="respuesta">
+    <p>¿Te gusta más el verano o el invierno?</p>
+    <input type="text" id="respuesta">
+    <p>¿Cuál es tu comida preferida?</p>
+    <input type="text" id="respuesta">
+    <p>¿Tienes mascotas? Si es así, ¿cuáles?</p>
+    <input type="text" id="respuesta">
+    <p>¿Qué tipo de música te gusta escuchar?</p>
+    <input type="text" id="respuesta">
+
+    <button onclick="btnEnviar()">Terminar!</button>
+    <button onclick="btnEnviar()">Reiniciar</button>
+
+    <audio id="audio">
+        <source src="/audio/gameover.mp3" loop>
+
+    </audio>
+
+    <script>
+        let tiempoFinalizado = setTimeout(tiempoCumplido, 30000);
+        <!-- tiempoIntervalo = setTimeout(tiTac, 1000) -->
+    </script>
+</body>
+</html>
