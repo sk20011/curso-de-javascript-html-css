@@ -5,30 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onload()>
-    <h2>Responde de la manera mas rapida a estas preguntas</h2>
+<body onload="inicioTiempo()">
+    <h2>Responde de la manera más rápida a estas preguntas<span id="cuenta-atras"></span></h2>
     <p>¿Cuál es tu color favorito?</p>
-    <input type="text" id="respuesta">
+    <input type="text" id="respuesta1">
     <p>¿Te gusta más el verano o el invierno?</p>
-    <input type="text" id="respuesta">
+    <input type="text" id="respuesta2">
     <p>¿Cuál es tu comida preferida?</p>
-    <input type="text" id="respuesta">
+    <input type="text" id="respuesta3">
     <p>¿Tienes mascotas? Si es así, ¿cuáles?</p>
-    <input type="text" id="respuesta">
+    <input type="text" id="respuesta4">
     <p>¿Qué tipo de música te gusta escuchar?</p>
-    <input type="text" id="respuesta">
+    <input type="text" id="respuesta5">
 
     <button onclick="btnEnviar()">Terminar!</button>
-    <button onclick="btnEnviar()">Reiniciar</button>
+    <button onclick="volver()">Reiniciar</button>
 
     <audio id="audio">
-        <source src="/audio/gameover.mp3" loop>
-
+        <source src="/proyecto-dia-3/audio/gameover.mp3" loop>
     </audio>
 
     <script>
-        let tiempoFinalizado = setTimeout(tiempoCumplido, 30000);
-        <!-- tiempoIntervalo = setTimeout(tiTac, 1000) -->
+        let tiempoFinalizado;
+        let tiempoIntervalo;
+
+        function inicioTiempo(){
+            tiempoFinalizado = setTimeout(tiempoCumplido, 30000);
+            tiempoIntervalo = setInterval(tiTac, 1000);
+
+            document.getElementById("cuenta-atras").textContent = 30;
+        }
+
+        function tiTac(){
+            let tiempo = document.getElementById("cuenta-atras").textContent;
+            document.getElementById("cuenta-atras").textContent = tiempo - 1;
+        }
+
+        function tiempoCumplido(){
+            clearInterval(tiempoIntervalo);
+            document.getElementById("cuenta-atras").textContent = 0;
+            document.getElementById("audio").play();
+            alert("Game Over");
+        }
+
+        function btnEnviar(){
+            clearTimeout(tiempoFinalizado);
+            clearInterval(tiempoIntervalo);
+
+            let fecha = new Date();
+            let respuesta1 = document.getElementById("respuesta1").value;
+            let respuesta2 = document.getElementById("respuesta2").value;
+            let respuesta3 = document.getElementById("respuesta3").value;
+            let respuesta4 = document.getElementById("respuesta4").value;
+            let respuesta5 = document.getElementById("respuesta5").value;
+
+            let mensaje = fecha.toLocaleDateString("es-ES") + "\n" + 
+                            "1." + respuesta1 + "\n" +
+                            "2." + respuesta2 + "\n" +
+                            "3." + respuesta3 + "\n" +
+                            "4." + respuesta4 + "\n" +
+                            "5." + respuesta5;
+
+            console.log(mensaje); 
+        }
+
+        function volver(){
+            location.reload();
+        }
     </script>
 </body>
 </html>
